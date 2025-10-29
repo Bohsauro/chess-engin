@@ -1,6 +1,12 @@
 #include "board.h"
 #include <iostream>
 
+int NotToInt(char str[3]) {
+    int b = int(str[0]) - 96;
+    int a = (str[1] - '0') * 7;
+    return a+b;
+}
+
 Board::Board() {
     reset();
 }

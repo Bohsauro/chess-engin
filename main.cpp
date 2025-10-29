@@ -3,6 +3,7 @@
 
 int main() {
     Board board;
-    board.print();
+    //board.print();
+    std::cout << NotToInt("h8");
     return 0;
 }

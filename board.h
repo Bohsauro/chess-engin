@@ -2,6 +2,8 @@
 #include <array>
 #include <string>
 
+int NotToInt(char str[3]);
+
 enum class Piece {
     EMPTY,
     PAWN,
@@ -25,6 +27,13 @@ struct Square {
 
 class Board {
 public:
+    bool whiteTurn;
+    int moves;
+    int halfMoves;
+    int fiftyMoves;
+    int enPassant;
+    bool whiteLong, whiteShort, blackLong, blackShort;
+
     Board();
     void reset();  // Inizializza la board alla posizione standard
     void print() const;
