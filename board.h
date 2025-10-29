@@ -4,6 +4,9 @@
 
 int NotToInt(char str[3]);
 
+
+
+
 enum class Piece {
     EMPTY,
     PAWN,
@@ -39,5 +42,15 @@ public:
     void print() const;
 
 private:
-    std::array<std::array<Square, 8>, 8> board;
+    std::array<std::array<Square, 8>, 8>& getBoard();
+};
+
+struct Move {
+    int fromRow, fromCol;
+    int toRow, toCol;
+    Piece movedPiece;
+    Piece capturedPiece;
+    Piece promotionPiece;
+    bool isEnPassant;
+    bool isCastling;
 };

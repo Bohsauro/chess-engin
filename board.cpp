@@ -69,3 +69,7 @@ void Board::print() const {
     }
     std::cout << "  a b c d e f g h\n";
 }
+
+std::array<std::array<Square, 8>, 8>& Board::getBoard() {
+    return board;
+}
