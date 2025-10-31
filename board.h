@@ -2,7 +2,6 @@
 #include <array>
 #include <string>
 
-int NotToInt(char str[3]);
 
 
 
@@ -41,13 +40,12 @@ public:
     void reset();  // Inizializza la board alla posizione standard
     void print() const;
 
-private:
-    std::array<std::array<Square, 8>, 8>& getBoard();
+    std::array<std::array<Square, 8>, 8> board;
 };
 
 struct Move {
-    int fromRow, fromCol;
-    int toRow, toCol;
+    int from;
+    int to;
     Piece movedPiece;
     Piece capturedPiece;
     Piece promotionPiece;

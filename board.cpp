@@ -1,11 +1,6 @@
 #include "board.h"
 #include <iostream>
 
-int NotToInt(char str[3]) {
-    int b = int(str[0]) - 96;
-    int a = (str[1] - '0') * 7;
-    return a+b;
-}
 
 Board::Board() {
     reset();
@@ -70,6 +65,4 @@ void Board::print() const {
     std::cout << "  a b c d e f g h\n";
 }
 
-std::array<std::array<Square, 8>, 8>& Board::getBoard() {
-    return board;
-}
+
