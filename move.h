@@ -1,6 +1,6 @@
 #pragma once
 #include <vector>
-
+#include <string>
 #include "board.h"
 
 // Converte un indice 0–63 in una stringa tipo "e2"

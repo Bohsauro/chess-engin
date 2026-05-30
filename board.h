@@ -1,10 +1,7 @@
 #pragma once
 #include <array>
 #include <string>
-
-
-
-
+#include <vector>
 
 enum class Piece {
     EMPTY,
@@ -27,6 +24,16 @@ struct Square {
     Color color;
 };
 
+struct Move {
+    int from;
+    int to;
+    Piece movedPiece;
+    Piece capturedPiece;
+    Piece promotionPiece;
+    bool isEnPassant;
+    bool isCastling;
+};
+
 class Board {
 public:
     bool whiteTurn;
@@ -40,15 +47,12 @@ public:
     void reset();  // Inizializza la board alla posizione standard
     void print() const;
 
-    std::array<std::array<Square, 8>, 8> board;
-};
+    void makeMove(const Move& m);
+    // For simple undo, we could store state or just take it back manually.
+    // Given the small state, copying might be easier for legal move checking,
+    // but let's implement a simple make/unmake or just copy.
 
-struct Move {
-    int from;
-    int to;
-    Piece movedPiece;
-    Piece capturedPiece;
-    Piece promotionPiece;
-    bool isEnPassant;
-    bool isCastling;
+    bool isSquareAttacked(int r, int c, Color attackerColor) const;
+
+    std::array<std::array<Square, 8>, 8> board;
 };
