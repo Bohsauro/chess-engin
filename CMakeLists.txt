@@ -8,4 +8,6 @@ add_executable(chess_engin main.cpp
         board.cpp
         move.cpp
         move.h
+        search.cpp
+        search.h
 )
